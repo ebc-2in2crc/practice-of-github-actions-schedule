@@ -1,0 +1,14 @@
+name: Scheduler
+
+on:
+    schedule:
+        - cron: '*/2 * * * *'
+
+jobs:
+    build:
+        name: schedule build
+        runs-on: ubuntu-latest
+
+    steps:
+    - name: Run a on-line script
+      run: echo Hello, world!
