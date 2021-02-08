@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: wareki checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
         with:
           repository: 'ebc-2in2crc/wareki'
           path: 'wareki'
@@ -16,7 +16,7 @@ jobs:
         run: ls wareki
 
       - name: url-anchor checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
         with:
           repository: 'ebc-2in2crc/url-anchor'
           path: 'url-anchor'
