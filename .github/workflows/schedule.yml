@@ -1,15 +1,26 @@
 name: Scheduled build
-on:
+on: 
+  workflow_dispatch:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '*/3 * * * *'
+
 jobs:
   build:
     name: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: wareki checkout
+        uses: actions/checkout@v2
         with:
           repository: 'ebc-2in2crc/wareki'
           path: 'wareki'
       - name: ls
         run: ls wareki
+
+      - name: url-anchor checkout
+        uses: actions/checkout@v2
+        with:
+          repository: 'ebc-2in2crc/url-anchor'
+          path: 'url-anchor'
+      - name: ls
+        run: ls url-anchor
